@@ -1,8 +1,11 @@
 import { Image, Text, View } from "react-native"
 import { useLocalSearchParams } from "expo-router"
+import { Feather } from "@expo/vector-icons"
 
 import { PRODUCTS } from "@/utils/data/products"
 import { formatCurrency } from "@/utils/functions/format-currency"
+
+import { Button } from "@/components/button"
 
 export default function Product() {
     const { id } = useLocalSearchParams()
@@ -36,6 +39,17 @@ export default function Product() {
                         </Text>
                     ))
                 }
+            </View>
+
+            <View className="p-5 pb-8 gap-5">
+                <Button>
+                    <Button.Icon>
+                        <Feather name="plus-circle" size={20} />
+                    </Button.Icon>
+                    <Button.Text>
+                        Adicionar ao pedido
+                    </Button.Text>
+                </Button>
             </View>
         </View>
     )
